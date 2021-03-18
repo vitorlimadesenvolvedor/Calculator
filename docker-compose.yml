@@ -1,0 +1,24 @@
+version: '3.5'
+
+services:
+  api1:
+    image: api1
+    container_name: container_api1
+    build:
+      context: .
+      dockerfile: API1/Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://localhost:5000:80  
+    ports: 
+      - "5000:80"  
+  api2:
+    image: api2
+    container_name: container_api2
+    build:
+      context: .
+      dockerfile: API2/Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://localhost:5001:443  
+      - Services__API1=http://api1/
+    ports: 
+      - "5001:443"  
