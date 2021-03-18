@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace API2.Services
+namespace Domain.Helpers
 {
-    public class Calculator
+    public static class Calculator
     {
-        public decimal CalculateInterest(decimal initialValue, decimal interestRate, int months)
+        public static decimal CalculateCompoundInterest(decimal initialValue, decimal interestRate, int months)
         {
             if (months < 0)
                 months = Math.Abs(months);
@@ -13,7 +15,7 @@ namespace API2.Services
                 initialValue = Math.Abs(initialValue);
 
             decimal result = initialValue * (decimal)(Math.Pow((double)(1 + interestRate), months));
-            decimal roundedResult = Math.Round(result, 2);
+            decimal roundedResult = Math.Round(result, 2, MidpointRounding.ToZero);
 
             return roundedResult;
         }
