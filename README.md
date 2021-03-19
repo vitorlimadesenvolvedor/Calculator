@@ -95,7 +95,7 @@ You can change ports in Properties/launchSettings.json
     },
     
 ```
-Also is necessary change the port in appsettings.json of the project API 2
+Also is necessary change the API1 port in appsettings.json of the project API 2
 
 ```json
 "Services": {
