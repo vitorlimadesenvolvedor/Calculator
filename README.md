@@ -11,7 +11,7 @@ _Both projects have a **[Swagger]** interface_
 
 Calculator was built with that technologies:
 
-- [ASP.NET Core] 
+- [ASP.NET Core] 3.1
 - [Docker] 
 
 ## Quick Start with Docker
@@ -102,6 +102,12 @@ Also is necessary change the API1 port in appsettings.json of the project API 2
     "API1": "http://localhost:[Custom port]/"
   },
 ```
+
+## Develop
+
+- To develop is necessary have .NET Core SDK 3.1 installed in machine
+- To run UI tests, APIs must be running 
+
 
 [ASP.NET Core]: <https://github.com/dotnet/aspnetcore>
 [Docker]: <https://github.com/docker>
