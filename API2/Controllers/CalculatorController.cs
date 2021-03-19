@@ -2,6 +2,7 @@
 using Domain.Helpers;
 using Domain.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace API2.Controllers
@@ -22,5 +23,9 @@ namespace API2.Controllers
             decimal result = await _calculatorService.GetTotalCompoundInterestGain(calculatorDTO.ValorInicial, calculatorDTO.Meses);
             return Ok(result);
         }
+
+        [HttpGet("showmethecode")]
+        public ActionResult<Uri> ShowMeTheCode()
+        => new Uri("https://github.com/vitorlimadesenvolvedor/Calculator");
     }
 }

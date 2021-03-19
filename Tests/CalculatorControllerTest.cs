@@ -2,6 +2,7 @@ using API2.Controllers;
 using Domain.DTOs;
 using Domain.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Globalization;
 using System.Threading.Tasks;
 using Tests.Fixture;
@@ -39,10 +40,36 @@ namespace Tests
             Assert.IsType<OkObjectResult>(result);
         }
 
+        [Fact]
+        public void ShowMeTheCode_ReturnsOkObjectResult()
+        {
+            // Act
+            var result = _controller.ShowMeTheCode();
+            
+            // Assert
+            Assert.IsType<ActionResult<Uri>>(result);
+        }
+
 
         [Theory]
         [InlineData("/api/calculator/calculajuros?valorInicial=100&meses=5")]
         public async Task Get_CalculateInterest_EndpointReturnSuccessAndCorrectContentType(string url)
+        {
+            // Arrange
+            var client = _factory.CreateClient();
+
+            // Act
+            var response = await client.GetAsync(url);
+
+            // Assert
+            response.EnsureSuccessStatusCode();
+            Assert.Equal("application/json; charset=utf-8",
+                response.Content.Headers.ContentType.ToString());
+        }
+
+        [Theory]
+        [InlineData("/api/calculator/showmethecode")]
+        public async Task Get_ShowMeTheCode_EndpointReturnSuccessAndCorrectContentType(string url)
         {
             // Arrange
             var client = _factory.CreateClient();
