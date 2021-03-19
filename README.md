@@ -18,7 +18,7 @@ Calculator was built with that technologies:
 
 > Note: If you are a Windows user, make sure that Docker is running in Linux containers mode.
 
-In root folder, run the command below:
+In project root folder, run the command below:
 ```sh
 docker-compose up -d
 ```
@@ -95,7 +95,7 @@ You can change ports in Properties/launchSettings.json
     },
     
 ```
-Also is necessary change the port in appsettings.json of the project API 2
+Also is necessary change the API1 port in appsettings.json of the project API 2
 
 ```json
 "Services": {
