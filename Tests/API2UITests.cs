@@ -71,10 +71,8 @@ namespace Tests
             _driver.FindElement(By.Id("operations-Calculator-get_api_Calculator_calculajuros"))
                .Click();
 
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 
-            _driver.FindElement(By.Id("operations-Calculator-get_api_Calculator_calculajuros"))
-               .Click();
 
             _driver.FindElement(By.CssSelector("button.try-out__btn"))
                 .Click();
@@ -88,10 +86,8 @@ namespace Tests
             _driver.FindElement(By.CssSelector("button.opblock-control__btn"))
                 .Click();
 
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 
-            _driver.FindElement(By.CssSelector("button.opblock-control__btn"))
-                .Click();
 
             var inputElementValorInicial = _driver.FindElement(By.CssSelector(ValorInicialCssSelector));
             var inputElementMeses = _driver.FindElement(By.CssSelector(MesesCssSelector));
