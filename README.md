@@ -18,7 +18,7 @@ Calculator was built with that technologies:
 
 > Note: If you are a Windows user, make sure that Docker is running in Linux containers mode.
 
-In root folder, run the command below:
+In project root folder, run the command below:
 ```sh
 docker-compose up -d
 ```
